@@ -1,0 +1,61 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output directories (you may have different build directories)
+dist/
+build/
+out/
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Ignore log files and error reports
+logs/
+*.log
+npm-debug.log*
+
+# Ignore any generated files
+*.pem
+*.seed
+*.key
+
+# Ignore package-lock.json, yarn.lock, and npm's debug file
+# package-lock.json
+# yarn.lock
+# .npmrc
+
+# Ignore .DS_Store (macOS system file)
+.DS_Store
+
+# Ignore development and editor-specific files
+*.swp
+.vscode/
+.idea/
+.project
+.settings/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore database dumps
+*.dump
+*.sql
+*.sqlite
+
+# Ignore temporary files
+*.tmp
+
+# Ignore coverage output
+coverage/
+
+# Ignore compiled JavaScript files
+# *.js
+
+# Ignore compiled TypeScript files
+*.ts
+*.d.ts
+*.js.map
