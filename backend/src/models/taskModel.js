@@ -16,12 +16,10 @@ const taskSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["To-Do", "In Progress", "Completed"],
       default: "To-Do",
     },
     email: {
       type: String,
-      required: true,
       trim: true,
       lowercase: true, // Ensure email consistency by converting to lowercase
     },
