@@ -8,6 +8,13 @@ const hpp = require('hpp');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 
+const connectDB  = require('./src/config/database');
+
+// Routes Import
+const userRoutes = require('./src/routes/userRoutes');
+const authRoutes = require('./src/routes/authRoutes');
+const taskRoutes = require('./src/routes/taskRoutes');
+
 // Create Express app
 const app = express();
 
@@ -33,8 +40,13 @@ if (process.env.NODE_ENV === 'development') {
 // Body Parser Middleware
 app.use(bodyParser.json());
 
+// Database Connection
+connectDB()
+
 // Define your API routes here
-app.use('/api/v1', require('./routes/api')); // Example route structure, adjust as needed
+app.use('/api/v1', userRoutes); // Example route structure, adjust as needed
+app.use('/api/v1/auth/', authRoutes)
+app.use('/api/v1', taskRoutes)
 
 // Undefined Route Handler
 app.use('*', (req, res) => {
